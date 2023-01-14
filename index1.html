@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas2</title>
+</head>
+<body>
+    <div>
+        <canvas id="canvasid" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas = document.getElementById("canvasid");
+            var ctx = canvas.getContext("2d");
+            ctx.moveTo(50, 50);
+            ctx.lineTo(100, 100);
+            ctx.stroke();
+            ctx.moveTo(100, 50);
+            ctx.lineTo(50, 100);
+            ctx.stroke();
+        </script>
+    </div>
+    <div>
+        <canvas id="canvasid1" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas1 = document.getElementById("canvasid1");
+            var ctx1 = canvas1.getContext("2d");
+            ctx1.moveTo(50, 75);
+            ctx1.lineTo(150, 75);
+            ctx1.stroke();
+            ctx1.moveTo(150, 75);
+            ctx1.lineTo(125, 100);
+            ctx1.stroke();
+            ctx1.moveTo(150, 75);
+            ctx1.lineTo(125, 50);
+            ctx1.stroke();
+        </script>
+    </div>
+    <div>
+        <canvas id="canvasid2" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas2 = document.getElementById("canvasid2");
+            var ctx2 = canvas2.getContext("2d");
+            ctx2.fillRect(25, 25, 125, 125);
+            ctx2.clearRect(40, 40, 60, 60);
+        </script>
+    </div>
+    <div>
+        <canvas id="canvasid3" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas3 = document.getElementById("canvasid3");
+            var ctx3 = canvas3.getContext("2d");
+            function getRadius(degres){
+                return (Math.PI/180)*degres;
+            }
+            ctx1.moveTo(150, 75);
+            ctx1.lineTo(125, 50);
+            ctx3.arc(75, 100, 50, 0, getRadius(180));
+            ctx3.stroke();
+        </script>
+    </div>
+</body>
+</html>

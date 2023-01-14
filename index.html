@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <h1>1.2</h1>
+    <div>
+        <canvas id="canvasid" width="300" height="100" style="border: 1px solid blue;"></canvas>
+        <script>
+            var canvas = document.getElementById("canvasid");
+            var ctx = canvas.getContext("2d");
+            ctx.moveTo(50, 50);
+            ctx.lineTo(100, 50);
+            ctx.stroke();
+        </script>
+    </div>
+    <h1>1.3</h1>
+    <div>
+        <h2>1</h2>
+        <canvas id="canvasid1" width="300" height="100" style="border: 1px solid magenta;"></canvas>
+        <div id="result">
+            <script>
+                var canvas1 = document.getElementById("canvasid1");
+                var ctx1 = canvas1.getContext("2d");
+                canvas1.width = 200;
+                canvas1.height = 90;
+                ctx1.strokeStyle = "green";
+                ctx1.fillStyle = "blue";
+                ctx1.shadowBlur = 10;
+                ctx1.shadowColor = "brown";
+                ctx1.rect(10, 30, 80, 40);
+                ctx1.fill();
+                ctx1.stroke();
+            </script>
+        </div>
+    </div>
+    <h2>2</h2>
+        <canvas id="canvasid2" width="300" height="100" style="border: 1px solid magenta;"></canvas>
+        <div id="result">
+            <script>
+                var canvas2 = document.getElementById("canvasid2");
+                var ctx2 = canvas2.getContext("2d");
+                ctx2.strokeText("Зигзаг", 10, 10);
+                ctx2.stroke();
+                ctx2.lineWidth = 10;
+                ctx2.strokeStyle = "#0000ff";
+                var x = [40, 70, 100, 130, 160, 190];
+                var y = [40, 80, 40, 80, 40, 80];
+                ctx2.moveTo(10, 80);
+                ctx2.beginPath();
+                for(var i =0; i<x.length; i++){
+                    ctx2.lineTo(x[i],y[i]);
+                }
+                ctx2.stroke();
+            </script>
+        </div>
+    </div>
+    <h2>3</h2>
+        <canvas id="canvasid3" width="300" height="100" style="border: 1px solid magenta;"></canvas>
+        <div id="result">
+            <script>
+                var canvas3 = document.getElementById("canvasid3");
+                var ctx3 = canvas3.getContext("2d");
+                ctx3.strokeText("Зигзаг", 10, 10);
+                ctx3.stroke();
+                ctx3.lineWidth = 10;
+                ctx3.strokeStyle = "#0000ff";
+                var x = [40, 70, 100, 130, 160, 190];
+                var y = 80;
+                ctx3.moveTo(10, 80);
+                ctx3.beginPath();
+                for(var i =0; i<x.length; i++){
+                    if(y>40) y = 40; else y = 80;
+                    ctx3.lineTo(x[i],y);
+                }
+                ctx3.stroke();
+            </script>
+        </div>
+    </div>
+    <h1>1.4</h1>
+    <h2>1</h2>
+        <canvas id="canvasid4" width="300" height="100" style="border: 1px solid magenta;"></canvas>
+        <div id="result">
+            <script>
+                var canvas4 = document.getElementById("canvasid4");
+                var ctx4 = canvas4.getContext("2d");
+                ctx4.lineWidth = 5;
+                function square(side, x, color){
+                    ctx4.strokeStyle = color;
+                    ctx4.strokeRect(x, 10, side, side);
+                    ctx4.stroke();
+                }
+                square(15, 10, "red");
+                square(25, 50, "green");
+                square(35, 110, "blue");
+                square(45, 180, "brown");
+            </script>
+        </div>
+    </div>
+    <h2>2</h2>
+        <canvas id="canvasid5" width="300" height="100" style="border: 1px solid magenta;"></canvas>
+        <div id="result">
+            <script>
+                var canvas5 = document.getElementById("canvasid5");
+                var ctx5 = canvas5.getContext("2d");
+                ctx5.lineWidth = 5;
+                function square1(obj){
+                    ctx5.strokeStyle = obj.color;
+                    ctx5.strokeRect(obj.x, 10, obj.side, obj.side);
+                    ctx5.stroke();
+                }
+                var s = {side:15, x:10, color:'red'};
+                square1(s);
+                square1({side:25, x:50, color:'green'});
+                square1({"side":35, "x":110, "color":'blue'});
+                square1(Object.create({side:45, x:180, color:'brown'}));
+            </script>
+        </div>
+    </div>
+</body>
+</html>
