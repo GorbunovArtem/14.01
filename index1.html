@@ -59,5 +59,60 @@
             ctx3.stroke();
         </script>
     </div>
+    <div>
+        <canvas id="canvasid4" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas4 = document.getElementById("canvasid4");
+            var ctx4 = canvas4.getContext("2d");
+            ctx4.moveTo(120, 150);
+            ctx4.quadraticCurveTo(160, 140, 160, 90);
+            ctx4.fill();
+        </script>
+    </div>
+    <div>
+        <canvas id="canvasid5" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas5 = document.getElementById("canvasid5");
+            var ctx5 = canvas5.getContext("2d");
+            for(var i = 1; i < 3; i++){
+                if(i == 1){
+                    ctx5.fillStyle = 'green';
+                    ctx5.fillRect(75, 20, 60, 60);
+                } else {
+                    ctx5.fillStyle = 'red';
+                    ctx5.fillRect(75, 120, 60, 60);
+                }
+            }
+        </script>
+    </div>
+    <div>
+        <canvas id="canvasid6" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas6 = document.getElementById("canvasid6");
+            var ctx6 = canvas6.getContext("2d");
+            for(var i = 1; i <= 10; i++){
+                ctx6.moveTo(40, 17*i);
+                ctx6.lineTo(160, 17*i);
+            }
+            ctx6.stroke();
+        </script>
+    </div>
+    <div>
+        <canvas id="canvasid7" width="200" height="200" style="border: 1px solid black;"></canvas>
+        <script>
+            var canvas7 = document.getElementById("canvasid7");
+            var ctx7 = canvas7.getContext("2d");
+            for(var i = 2; i <= 9; i++){
+                ctx7.moveTo(17, 17*i);
+                ctx7.lineTo(170, 17*i);
+            }
+            ctx7.stroke();
+            for(var i = 2; i <= 9; i++){
+                ctx7.moveTo(17*i, 17);
+                ctx7.lineTo(17*i, 170);
+            }
+            ctx7.stroke();
+        </script>
+    </div>
 </body>
 </html>
